@@ -5,10 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.outfitsaver.app"
+      "bundleIdentifier": "com.outfitsaver.app",
+      "infoPlist": {}
     },
     "android": {
       "adaptiveIcon": {
@@ -32,6 +33,12 @@
           "cameraPermission": "Outfit Saver uses the camera to photograph your clothes and accessories.",
           "photosPermission": "Outfit Saver lets you pick photos of your clothes from your library.",
           "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Outfit Saver uses your approximate location to show today’s weather and suggest outfits for it."
         }
       ]
     ],

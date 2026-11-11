@@ -4,12 +4,15 @@ A React Native (Expo) app for planning what to wear. Photograph your clothes and
 
 ## Features
 
-- **Closet**: take a photo (or pick one from your library) of each piece and tag it as Tops, Bottoms, Dresses, Outerwear, Shoes or Accessories. You can filter by category, rename items, recategorize them or delete them.
-- **Outfit builder**: tap items from each category to put a look together, name it and save it. **Shuffle** fills the builder with a random combination.
-- **Today**: shows today's planned outfit, or press **Shuffle an outfit** for a random suggestion (a dress, or a top and bottom, plus shoes, sometimes a layer and accessories). You can wear it, tweak it or shuffle again.
-- **Calendar**: a month view showing a thumbnail for every day that has an outfit planned. Tap a day to assign, swap or remove an outfit.
+- **Frosted-glass design** in the style of recent iOS: translucent materials over a slowly drifting colour backdrop, large titles, a floating tab bar with a sliding highlight, and a separate camera button. It follows the phone's light/dark setting.
+- **Today**: a greeting, the local weather with a styling tip, and a **swipeable deck** of outfit suggestions made from your own clothes. Swipe right (or tap ♥) to wear one, or left to skip.
+- **Weather-aware shuffle**: cold or rainy days always get a layer, hot days skip it. Weather comes from Open-Meteo (free, no key) using your approximate location. If you deny location, the card hides and shuffling still works.
+- **Flat-lay boards**: every outfit is laid out like a styled flat lay, with the main piece in the middle, a jacket peeking out behind, shoes at the foot and accessories down the side. Items spring into place as you build.
+- **Closet**: a camera viewfinder with a shutter button, category tiles, and a filterable grid with staggered animations. Each piece has a detail page with stats (looks, days planned).
+- **Looks** (saved outfits) and **Plan** (a month calendar where each styled day shows its outfit as a photo).
+- **Haptics** on taps, swipes past the threshold, saves and deletes, plus spring press animations throughout.
 
-Everything stays on your device. Photos are copied into the app's private documents folder, and closet data is stored with AsyncStorage. There are no accounts or servers.
+Everything stays on your device. Photos are copied into the app's private documents folder, and closet data is stored with AsyncStorage. The only network request is the weather lookup.
 
 ## Run it
 
@@ -30,8 +33,8 @@ src/app/            Screens (Expo Router: every file is a route)
   add-item.tsx      Camera / photo-library capture
   item/[id].tsx     Item details
   outfit/[id].tsx   Outfit builder ("new" creates one)
-src/components/     Shared UI pieces
-src/lib/            Data store, persistence, shuffle logic, theme
+src/components/     Glass UI kit, FlatLay board, SwipeDeck, floating TabBar
+src/lib/            Data store, persistence, weather, shuffle logic, theme, haptics
 ```
 
 Typecheck with `npm run typecheck`.
